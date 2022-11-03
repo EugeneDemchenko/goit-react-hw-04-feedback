@@ -1,0 +1,15 @@
+.buttonsList {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px 0;
+}
+.button {
+    width: 100px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.button.good{ background-color: green;}
+.button.neutral{ background-color: yellow;}
+.button.bad{ background-color: red;}

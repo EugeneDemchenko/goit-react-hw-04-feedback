@@ -1,0 +1,13 @@
+.section {
+    width: 480px;
+    margin: 0 auto;
+}
+.title {
+    margin: 10px auto;
+    font-size: 46px;
+}
+.stat {
+    margin: 10px 0;
+    font-size: 30px;
+    text-align: center;
+}

@@ -1,14 +1,15 @@
 import React from "react";
+import './Statistics.css'
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
     total
-        ? <div>
-            <span>Good: {good}</span>
-            <span>Neutral: {neutral}</span>
-            <span>Bad: {bad}</span>
-            <span>Total: {total}</span>
-            <span>Positive feedback: {positivePercentage}%</span>
-        </div>
-        : <span>There is no feedback</span>
+        ? <ul className="list">
+            <li className="item">Good: {good}</li>
+            <li className="item">Neutral: {neutral}</li>
+            <li className="item">Bad: {bad}</li>
+            <li className="item">Total: {total}</li>
+            <li className="item">Positive feedback: {positivePercentage}%</li>
+        </ul>
+        : <span className="empty">There is no feedback</span>
 )
 export default Statistics
