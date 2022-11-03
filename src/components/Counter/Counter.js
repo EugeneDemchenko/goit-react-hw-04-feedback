@@ -1,6 +1,9 @@
 import React from "react";
+import Options from "../FeedbackOptions/FeedbackOptions";
+import Statistics from "../Statistics/Statistics";
 
 class Counter extends React.Component {
+
     state = {
         good: 0,
         neutral: 0,
@@ -29,30 +32,28 @@ class Counter extends React.Component {
             }
         });
     }
-    countTotalFB = () => {console.log('total');};
-
-    countPercentPosFB = () => {}
 
     render() {
         return (<div>
             <h1>Please leave feedback</h1>
-            <div>
-                <button type="button" onClick={this.countPositiveFB}>Good</button>
-                <button type="button" onClick={this.countNeutralFB}>Neutral</button>
-                <button type="button" onClick={this.countNegativeFB}>Bad</button>
-            </div>
+
+            <Options
+                positiveFB={this.countPositiveFB}
+                neutralFB={this.countNeutralFB}
+                negativeFB={this.countNegativeFB}
+            />
+
             <h2>Statistics</h2>
-            <div>
-                <span>Good: {this.state.good}</span>
-                <span>Neutral: {this.state.neutral}</span>
-                <span>Bad: {this.state.bad}</span>
-                <span>Total: 0</span>
-                <span>Positive feedback: 100%</span>
-            </div>
+
+            <Statistics
+                good={this.state.good}
+                neutral={this.state.neutral}
+                bad={this.state.bad}
+                total={this.state.good + this.state.neutral + this.state.bad}
+                positivePercentage={Math.round(this.state.good / (this.state.good + this.state.neutral + this.state.bad) * 100)} />
         </div>
         );
     }
 };
-
 
 export default Counter;
