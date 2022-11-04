@@ -9,7 +9,5 @@
     font-size: 20px;
     cursor: pointer;
     border-radius: 4px;
+    text-transform: capitalize;
 }
-.button.good{ background-color: green;}
-.button.neutral{ background-color: yellow;}
-.button.bad{ background-color: red;}

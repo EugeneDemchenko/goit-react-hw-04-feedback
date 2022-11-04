@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types'
+import Notification from "components/Notification/Notification";
 import './Statistics.css'
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
@@ -10,6 +12,14 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
             <li className="item">Total: {total}</li>
             <li className="item">Positive feedback: {positivePercentage}%</li>
         </ul>
-        : <span className="empty">There is no feedback</span>
+        : <Notification message="There is no feedback"/>
 )
 export default Statistics
+
+Statistics.propTypes = {
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
+    positivePercentage: PropTypes.number.isRequired,
+}
